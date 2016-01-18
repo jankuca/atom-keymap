@@ -1,7 +1,7 @@
 CSON = require 'season'
 fs = require 'fs-plus'
 {isSelectorValid} = require 'clear-cut'
-{observeCurrentKeyboardLayout} = require 'keyboard-layout'
+#{observeCurrentKeyboardLayout} = require 'keyboard-layout'
 path = require 'path'
 #{File} = require 'pathwatcher'
 {Emitter, Disposable, CompositeDisposable} = require 'event-kit'
@@ -127,8 +127,8 @@ class KeymapManager
     return
 
   enableDvorakQwertyWorkaroundIfNeeded: ->
-    @keyboardLayoutSubscription = observeCurrentKeyboardLayout (layoutId) =>
-      @dvorakQwertyWorkaroundEnabled = (layoutId?.indexOf('DVORAK-QWERTYCMD') > -1)
+    # @keyboardLayoutSubscription = observeCurrentKeyboardLayout (layoutId) =>
+    #   @dvorakQwertyWorkaroundEnabled = (layoutId?.indexOf('DVORAK-QWERTYCMD') > -1)
 
   ###
   Section: Event Subscription
