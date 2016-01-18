@@ -3,7 +3,7 @@ fs = require 'fs-plus'
 {isSelectorValid} = require 'clear-cut'
 {observeCurrentKeyboardLayout} = require 'keyboard-layout'
 path = require 'path'
-{File} = require 'pathwatcher'
+#{File} = require 'pathwatcher'
 {Emitter, Disposable, CompositeDisposable} = require 'event-kit'
 KeyBinding = require './key-binding'
 CommandEvent = require './command-event'
@@ -336,14 +336,14 @@ class KeymapManager
   #   * `priority` A {Number} used to sort keybindings which have the same
   #     specificity.
   watchKeymap: (filePath, options) ->
-    if not @watchSubscriptions[filePath]? or @watchSubscriptions[filePath].disposed
-      file = new File(filePath)
-      reloadKeymap = => @reloadKeymap(filePath, options)
-      @watchSubscriptions[filePath] = new CompositeDisposable(
-        file.onDidChange(reloadKeymap)
-        file.onDidRename(reloadKeymap)
-        file.onDidDelete(reloadKeymap)
-      )
+    # if not @watchSubscriptions[filePath]? or @watchSubscriptions[filePath].disposed
+    #   file = new File(filePath)
+    #   reloadKeymap = => @reloadKeymap(filePath, options)
+    #   @watchSubscriptions[filePath] = new CompositeDisposable(
+    #     file.onDidChange(reloadKeymap)
+    #     file.onDidRename(reloadKeymap)
+    #     file.onDidDelete(reloadKeymap)
+    #   )
 
     undefined
 
